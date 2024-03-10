@@ -13,7 +13,7 @@
         android:theme="@style/Theme.TicketAndroid"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".feature.events.presentation.view.EventsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

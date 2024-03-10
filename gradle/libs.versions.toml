@@ -1,0 +1,79 @@
+[versions]
+# Android
+android-gradle-plugin = "8.2.1"
+
+#Android X
+androidx-appcompat = "1.4.1"
+androidx-fragment-ktx = "1.1.0"
+androidx-constraintlayout = "2.1.4"
+androidx-core-ktx = "1.7.0"
+androidx-lifecycle-viewmodel-ktx = "2.5.1"
+androidx-lifecycle-livedata-ktx = "2.5.1"
+
+# Kotlin
+kotlin = "1.9.22"
+kotlinx-coroutines = "1.6.4"
+
+# Google
+google-material = "1.4.0"
+
+# Retrofit
+retrofit2 = "2.9.0"
+retrofit2-gson-converter = "2.9.0"
+
+# Koin
+koin = "3.5.0"
+koin-annotations-bom = "1.3.0"
+
+# Glide
+glide = "4.16.0"
+
+# Testing
+junit = "4.13.2"
+androidx-junit = "1.1.5"
+androidx-test-espresso-core = "3.5.1"
+androidx-arch-core-testing = "2.1.0"
+mockk = "1.13.9"
+
+[libraries]
+# Android X
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "androidx-constraintlayout" }
+androidx-fragment = { module = "androidx.fragment:fragment-ktx", version.ref = "androidx-fragment-ktx" }
+androidx-core = { module = "androidx.core:core-ktx", version.ref = "androidx-core-ktx" }
+androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle-viewmodel-ktx" }
+androidx-lifecycle-livedata = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "androidx-lifecycle-livedata-ktx" }
+
+# Kotlin
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+kotlinx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
+
+# Google
+google-material = { module = "com.google.android.material:material", version.ref = "google-material" }
+
+# Retrofit
+retrofit2 = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit2" }
+retrofit2-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit2-gson-converter" }
+
+# Koin
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+koin-compiler = { module = "io.insert-koin:koin-ksp-compiler", version.ref = "koin-annotations-bom" }
+koin-core-coroutines = { module = "io.insert-koin:koin-core-coroutines", version.ref = "koin" }
+
+# Glide
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+glide-compiler = { module = "com.github.bumptech.glide:ksp", version.ref = "glide" }
+
+# Testing
+junit = { module = "junit:junit", version.ref = "junit" }
+androidx-junit = { module = "androidx.test.ext:junit", version.ref = "androidx-junit" }
+androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "androidx-test-espresso-core" }
+androidx-arch-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "androidx-arch-core-testing" }
+mockk-android = { module = "io.mockk:mockk-android", version.ref = "mockk" }
+mockk-core = { module = "io.mockk:mockk", version.ref = "mockk" }
+koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "android-gradle-plugin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }

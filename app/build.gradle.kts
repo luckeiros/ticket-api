@@ -1,6 +1,7 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.kapt)
 }
 
 android {
@@ -26,22 +27,57 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
 }
 
 dependencies {
+    /* Android */
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.fragment)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.core)
+    implementation(libs.androidx.lifecycle.livedata)
+    implementation(libs.androidx.lifecycle.viewmodel)
 
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.11.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    /* Kotlin */
+    implementation(libs.kotlin.stdlib)
+    implementation(libs.kotlinx.coroutines)
+
+    /* Google */
+    implementation(libs.google.material)
+    implementation(libs.google.material)
+
+    /* Retrofit */
+    implementation(libs.retrofit2)
+    implementation(libs.retrofit2.converter.gson)
+
+    /* Koin */
+    implementation(libs.koin.android)
+    implementation(libs.koin.compiler)
+    implementation(libs.koin.core.coroutines)
+
+    /* Glide */
+    implementation(libs.glide)
+    implementation(libs.glide.compiler)
+
+    /* Testing */
+    implementation(libs.junit)
+    implementation(libs.androidx.junit)
+    implementation(libs.androidx.espresso.core)
+    implementation(libs.androidx.arch.core.testing)
+    implementation(libs.mockk.android)
+    implementation(libs.mockk.core)
+    implementation(libs.koin.test)
 }
