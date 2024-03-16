@@ -1,4 +1,4 @@
-package com.luckeiros.ticketandroid.common
+package com.luckeiros.ticketandroid.common.view
 
 import android.view.View
 import android.view.View.GONE

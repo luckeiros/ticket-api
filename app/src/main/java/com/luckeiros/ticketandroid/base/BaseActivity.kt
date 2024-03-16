@@ -5,17 +5,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.luckeiros.ticketandroid.R
-import com.luckeiros.ticketandroid.common.gone
-import com.luckeiros.ticketandroid.common.visible
+import com.luckeiros.ticketandroid.common.view.gone
+import com.luckeiros.ticketandroid.common.view.viewBinding
+import com.luckeiros.ticketandroid.common.view.visible
 import com.luckeiros.ticketandroid.databinding.ActivityBaseBinding
 
 abstract class BaseActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityBaseBinding
+    private val binding by viewBinding(ActivityBaseBinding::inflate)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityBaseBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
 
