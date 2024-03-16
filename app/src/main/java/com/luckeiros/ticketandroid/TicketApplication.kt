@@ -1,8 +1,8 @@
 package com.luckeiros.ticketandroid
 
 import android.app.Application
-import com.luckeiros.ticketandroid.feature.event.di.eventsModule
-import com.luckeiros.ticketandroid.feature.event.di.networkModule
+import com.luckeiros.ticketandroid.core.networkModule
+import com.luckeiros.ticketandroid.feature.event.di.eventModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -12,7 +12,7 @@ class TicketApplication : Application() {
 
         startKoin {
             androidContext(baseContext)
-            modules(networkModule, eventsModule)
+            modules(networkModule, eventModule)
         }
     }
 }

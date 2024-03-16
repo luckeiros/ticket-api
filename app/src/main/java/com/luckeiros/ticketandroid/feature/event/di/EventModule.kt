@@ -1,18 +1,14 @@
 package com.luckeiros.ticketandroid.feature.event.di
 
-import com.luckeiros.ticketandroid.core.okHttpClient
+import com.luckeiros.ticketandroid.feature.event.data.repository.EventRepository
+import com.luckeiros.ticketandroid.feature.event.data.repository.EventRepositoryImpl
+import com.luckeiros.ticketandroid.feature.event.data.service.EventService
+import org.koin.core.module.dsl.factoryOf
+import org.koin.dsl.bind
 import org.koin.dsl.module
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
-val eventsModule = module {
-    single {
-        Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .client(okHttpClient)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-    }
+internal val eventModule = module {
+    factory { get<Retrofit>().create(EventService::class.java) }
+    factoryOf(::EventRepositoryImpl) bind EventRepository::class
 }
-
-private const val BASE_URL = "https://app.ticketmaster.com/discovery/v2/"

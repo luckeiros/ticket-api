@@ -14,8 +14,12 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "BASE_URL", "\"https://app.ticketmaster.com/discovery/v2/\"")
+        buildConfigField("long", "CONNECT_TIMEOUT", "10L")
+        buildConfigField("long", "READ_TIMEOUT", "30L")
+        buildConfigField("long", "WRITE_TIMEOUT", "15L")
     }
 
     buildTypes {
@@ -37,8 +41,13 @@ android {
         jvmTarget = "1.8"
     }
 
+    packaging {
+        resources.excludes.add("META-INF/*")
+    }
+
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 
