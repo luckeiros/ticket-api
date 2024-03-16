@@ -1,9 +1,8 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.TicketAndroid" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<resources>
+    <style name="Theme.TicketAndroid" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimaryDark">@color/blueMarine</item>
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorSecondary">@color/gray</item>
+        <item name="colorSurface">@color/black</item>
     </style>
-
-    <style name="Theme.TicketAndroid" parent="Base.Theme.TicketAndroid" />
 </resources>
