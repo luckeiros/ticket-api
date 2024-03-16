@@ -1,12 +1,12 @@
 package com.luckeiros.ticketandroid.feature.event.presentation.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.luckeiros.ticketandroid.R
+import com.luckeiros.ticketandroid.base.BaseActivity
 
-class EventActivity : AppCompatActivity() {
+class EventActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        openFragment(EventFragment(), true)
     }
 }
