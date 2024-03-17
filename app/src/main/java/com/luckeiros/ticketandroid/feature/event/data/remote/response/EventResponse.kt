@@ -59,7 +59,13 @@ data class StateDTO(
 
 data class EventImageDTO(
     @SerializedName("url")
-    val url: String?
+    val url: String?,
+    @SerializedName("ratio")
+    val ratio: String?,
+    @SerializedName("width")
+    val width: Int?,
+    @SerializedName("height")
+    val height: Int?
 )
 
 data class PageDTO(

@@ -61,7 +61,10 @@ private fun StateDTO.toModel() = State(
 )
 
 private fun EventImageDTO.toModel() = EventImage(
-    url = url.orEmpty()
+    url = url.orEmpty(),
+    ratio = ratio.orEmpty(),
+    width = width.orZero(),
+    height = height.orZero()
 )
 
 private fun PageDTO.toModel() = Page(
@@ -82,6 +85,6 @@ fun List<Event>.toEventItem(): List<EventItem> = this.map { event ->
         date = event.dates?.start?.date.orEmpty(),
         venue = venue?.name.orEmpty(),
         location = location,
-        imageUrl = event.images.lastOrNull()?.url.orEmpty()
+        image = event.images
     )
 }

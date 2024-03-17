@@ -1,5 +1,7 @@
 package com.luckeiros.ticketandroid.feature.event.domain
 
+import com.google.gson.annotations.SerializedName
+
 data class Event(
     val name: String,
     val dates: EventDates?,
@@ -34,7 +36,10 @@ data class State(
 )
 
 data class EventImage(
-    val url: String
+    val url: String,
+    val ratio: String,
+    val width: Int,
+    val height: Int
 )
 
 data class Page(
