@@ -1,7 +1,7 @@
 <resources>
     <style name="Theme.TicketAndroid" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimaryDark">@color/blueMarine</item>
-        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryDark">@color/blue</item>
+        <item name="colorPrimary">@color/light_blue</item>
         <item name="colorSecondary">@color/gray</item>
         <item name="colorSurface">@color/black</item>
     </style>

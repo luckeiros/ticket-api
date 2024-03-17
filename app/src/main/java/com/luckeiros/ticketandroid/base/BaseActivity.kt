@@ -5,9 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.luckeiros.ticketandroid.R
-import com.luckeiros.ticketandroid.common.view.gone
+import com.luckeiros.ticketandroid.common.extension.gone
 import com.luckeiros.ticketandroid.common.view.viewBinding
-import com.luckeiros.ticketandroid.common.view.visible
+import com.luckeiros.ticketandroid.common.extension.visible
 import com.luckeiros.ticketandroid.databinding.ActivityBaseBinding
 
 abstract class BaseActivity : AppCompatActivity() {

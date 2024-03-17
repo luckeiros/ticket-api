@@ -1,4 +1,4 @@
-package com.luckeiros.ticketandroid.core
+package com.luckeiros.ticketandroid.core.network
 
 import com.luckeiros.ticketandroid.BuildConfig
 import okhttp3.Interceptor

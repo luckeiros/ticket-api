@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- view -->
+    <dimen name="zero_grid">0dp</dimen>
+    <dimen name="smallest_grid">4dp</dimen>
+    <dimen name="small_grid">8dp</dimen>
+    <dimen name="medium_grid">16dp</dimen>
+    <dimen name="large_grid">32dp</dimen>
+
+    <dimen name="logo_width">160dp</dimen>
+    <dimen name="logo_height">23dp</dimen>
+
+    <!-- text -->
+    <dimen name="default_text">16sp</dimen>
+    <dimen name="medium_text">20sp</dimen>
+</resources>

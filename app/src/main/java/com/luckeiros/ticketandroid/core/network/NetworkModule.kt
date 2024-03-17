@@ -1,4 +1,4 @@
-package com.luckeiros.ticketandroid.core
+package com.luckeiros.ticketandroid.core.network
 
 import okhttp3.OkHttpClient
 import org.koin.dsl.module

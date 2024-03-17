@@ -1,5 +1,6 @@
-package com.luckeiros.ticketandroid.feature.event.data.mapper
+package com.luckeiros.ticketandroid.feature.event.domain.mapper
 
+import com.luckeiros.ticketandroid.common.extension.orZero
 import com.luckeiros.ticketandroid.feature.event.data.remote.response.CityDTO
 import com.luckeiros.ticketandroid.feature.event.data.remote.response.EmbeddedVenuesDTO
 import com.luckeiros.ticketandroid.feature.event.data.remote.response.EventDTO
@@ -7,6 +8,7 @@ import com.luckeiros.ticketandroid.feature.event.data.remote.response.EventDates
 import com.luckeiros.ticketandroid.feature.event.data.remote.response.EventImageDTO
 import com.luckeiros.ticketandroid.feature.event.data.remote.response.EventResponseDTO
 import com.luckeiros.ticketandroid.feature.event.data.remote.response.EventStartDTO
+import com.luckeiros.ticketandroid.feature.event.data.remote.response.PageDTO
 import com.luckeiros.ticketandroid.feature.event.data.remote.response.StateDTO
 import com.luckeiros.ticketandroid.feature.event.data.remote.response.VenueDTO
 import com.luckeiros.ticketandroid.feature.event.domain.City
@@ -15,8 +17,10 @@ import com.luckeiros.ticketandroid.feature.event.domain.Event
 import com.luckeiros.ticketandroid.feature.event.domain.EventDates
 import com.luckeiros.ticketandroid.feature.event.domain.EventImage
 import com.luckeiros.ticketandroid.feature.event.domain.EventStart
+import com.luckeiros.ticketandroid.feature.event.domain.Page
 import com.luckeiros.ticketandroid.feature.event.domain.State
 import com.luckeiros.ticketandroid.feature.event.domain.Venue
+import com.luckeiros.ticketandroid.feature.event.presentation.view.EventItem
 
 fun EventResponseDTO.toEventList(): List<Event> =
     embedded?.events?.map { eventDTO ->
@@ -35,8 +39,7 @@ private fun EventDatesDTO.toModel() = EventDates(
 )
 
 private fun EventStartDTO.toModel() = EventStart(
-    localDate = localDate.orEmpty(),
-    dateTime = dateTime.orEmpty()
+    date = localDate.orEmpty()
 )
 
 private fun EmbeddedVenuesDTO.toModel() = EmbeddedVenues(
@@ -60,3 +63,25 @@ private fun StateDTO.toModel() = State(
 private fun EventImageDTO.toModel() = EventImage(
     url = url.orEmpty()
 )
+
+private fun PageDTO.toModel() = Page(
+    size = size.orZero(),
+    totalElements = totalElements.orZero(),
+    totalPages = totalPages.orZero(),
+    number = number.orZero()
+)
+
+fun List<Event>.toEventItem(): List<EventItem> = this.map { event ->
+    val venue = event.embedded?.venues?.firstOrNull()
+    val city = event.embedded?.venues?.firstOrNull()?.city?.name.orEmpty()
+    val stateCode = event.embedded?.venues?.firstOrNull()?.state?.stateCode.orEmpty()
+    val location = if (stateCode.isNotEmpty()) "$city, $stateCode" else city
+
+    EventItem(
+        name = event.name,
+        date = event.dates?.start?.date.orEmpty(),
+        venue = venue?.name.orEmpty(),
+        location = location,
+        imageUrl = event.images.lastOrNull()?.url.orEmpty()
+    )
+}

@@ -1,7 +1,7 @@
 package com.luckeiros.ticketandroid.core
 
 import android.app.Application
-import com.luckeiros.ticketandroid.core.networkModule
+import com.luckeiros.ticketandroid.core.network.networkModule
 import com.luckeiros.ticketandroid.feature.event.di.eventModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin

@@ -30,9 +30,7 @@ data class EventDatesDTO(
 
 data class EventStartDTO(
     @SerializedName("localDate")
-    val localDate: String?,
-    @SerializedName("dateTime")
-    val dateTime: String?
+    val localDate: String?
 )
 
 data class EmbeddedVenuesDTO(
@@ -62,4 +60,15 @@ data class StateDTO(
 data class EventImageDTO(
     @SerializedName("url")
     val url: String?
+)
+
+data class PageDTO(
+    @SerializedName("size")
+    val size: Int?,
+    @SerializedName("totalElements")
+    val totalElements: Int?,
+    @SerializedName("totalPages")
+    val totalPages: Int?,
+    @SerializedName("number")
+    val number: Int?
 )

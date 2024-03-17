@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">TicketAndroid</string>
+    <string name="company_title">Ticketmaster</string>
+    <string name="search_title">Search events by city</string>
+    <string name="search_hint">Type a city</string>
+    <string name="content_description_logo">Ticketmaster logo</string>
+    <string name="content_description_event_image">Event image</string>
 </resources>

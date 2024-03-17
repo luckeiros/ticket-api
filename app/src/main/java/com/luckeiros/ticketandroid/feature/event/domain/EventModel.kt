@@ -12,8 +12,7 @@ data class EventDates(
 )
 
 data class EventStart(
-    val localDate: String,
-    val dateTime: String
+    val date: String
 )
 
 data class EmbeddedVenues(
@@ -36,4 +35,11 @@ data class State(
 
 data class EventImage(
     val url: String
+)
+
+data class Page(
+    val size: Int,
+    val totalElements: Int,
+    val totalPages: Int,
+    val number: Int
 )
