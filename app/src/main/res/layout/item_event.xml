@@ -27,6 +27,7 @@
             android:layout_width="@dimen/zero_grid"
             android:layout_height="@dimen/zero_grid"
             android:contentDescription="@string/content_description_event_image"
+            app:layout_constraintDimensionRatio="H,16:9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
