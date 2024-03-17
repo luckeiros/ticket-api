@@ -25,7 +25,7 @@
         <ImageView
             android:id="@+id/ivEvent"
             android:layout_width="@dimen/zero_grid"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/zero_grid"
             android:contentDescription="@string/content_description_event_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

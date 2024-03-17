@@ -1,7 +1,5 @@
 package com.luckeiros.ticketandroid.feature.event.domain
 
-import com.google.gson.annotations.SerializedName
-
 data class Event(
     val name: String,
     val dates: EventDates?,
