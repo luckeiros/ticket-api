@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="318ba9e7-a35e-4ac9-b325-ffa0b2b4dfb3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/local/dao/EventDao.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/local/db/EventDataBase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/local/entity/EventEntities.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/local/mapper/EventLocalMapper.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/local/related/EventWithImages.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/local/remotemediator/EventRemoteMediator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/core/TicketApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/core/application/TicketApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/repository/EventRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/repository/EventRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/repository/EventRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/repository/EventRepositoryImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/service/EventService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/api/EventApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/di/EventModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/di/EventModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/domain/EventModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/domain/EventModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/domain/mapper/EventMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/remote/mapper/EventMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/presentation/state/EventViewState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/presentation/state/EventViewState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/presentation/view/EventAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/presentation/view/EventAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/presentation/view/EventFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/presentation/view/EventFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/presentation/view/EventItem.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/presentation/viewmodel/EventViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/presentation/viewmodel/EventViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../gradle/libs.versions.toml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2dqUe5BsG1jV2rV3JQ2kuVABFEx" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "android.gradle.sync.needed": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "master"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="318ba9e7-a35e-4ac9-b325-ffa0b2b4dfb3" name="Changes" comment="" />
+      <created>1710735193668</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710735193668</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -1,12 +1,16 @@
-package com.luckeiros.ticketandroid.feature.event.data.service
+package com.luckeiros.ticketandroid.feature.event.data.api
 
 import com.luckeiros.ticketandroid.feature.event.data.remote.response.EventResponseDTO
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-internal interface EventService {
+interface EventApi {
     @GET(EVENTS_PATH)
-    suspend fun getEvent(@Query("city") city: String): EventResponseDTO
+    suspend fun getEvents(
+        @Query("city") city: String? = null,
+        @Query("number") page: Int,
+        @Query("size") pageSize: Int
+    ): EventResponseDTO
 
     private companion object {
         const val EVENTS_PATH = "events.json"

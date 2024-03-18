@@ -7,13 +7,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.luckeiros.ticketandroid.common.extension.formatDate
 import com.luckeiros.ticketandroid.common.extension.layoutInflater
 import com.luckeiros.ticketandroid.common.extension.loadImage
-import com.luckeiros.ticketandroid.common.extension.orZero
 import com.luckeiros.ticketandroid.common.view.ImageType
 import com.luckeiros.ticketandroid.databinding.ItemEventBinding
+import com.luckeiros.ticketandroid.feature.event.domain.Event
 import com.luckeiros.ticketandroid.feature.event.domain.EventImage
 
 internal class EventAdapter(
-    private val events: List<EventItem>
+    private val events: List<Event>
 ) : RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
@@ -31,18 +31,18 @@ internal class EventAdapter(
         private val binding: ItemEventBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(event: EventItem) = with(binding) {
+        fun bind(event: Event) = with(binding) {
 
             with(event) {
                 tvName.text = name
-                tvDate.text = date.formatDate()
+                tvDate.text = date?.formatDate()
                 tvVenue.text = venue
                 tvLocation.text = location
 
-                val matchedImageUrl = findBestMatchedImageUrl(event.image, ivEvent.context)
+                images?.let {
+                    val matchedImageUrl = findBestMatchedImageUrl(it, ivEvent.context)
 
-                matchedImageUrl?.let { url ->
-                    ivEvent.loadImage(ivEvent.context, url)
+                    matchedImageUrl?.let { url -> ivEvent.loadImage(ivEvent.context, url) }
                 }
             }
         }
@@ -57,7 +57,8 @@ internal class EventAdapter(
 
         private fun findBestMatchedImageUrl(images: List<EventImage>, context: Context): String? {
             val bestMatch = findBestImageType(context)
-            val matchedImage = images.find { it.ratio == bestMatch.ratio && it.width == bestMatch.width && it.height == bestMatch.height }
+            val matchedImage =
+                images.find { it.ratio == bestMatch.ratio && it.width == bestMatch.width && it.height == bestMatch.height }
             return matchedImage?.url
         }
     }

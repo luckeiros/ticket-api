@@ -1,4 +1,4 @@
-package com.luckeiros.ticketandroid.core
+package com.luckeiros.ticketandroid.core.application
 
 import android.app.Application
 import com.luckeiros.ticketandroid.core.network.networkModule

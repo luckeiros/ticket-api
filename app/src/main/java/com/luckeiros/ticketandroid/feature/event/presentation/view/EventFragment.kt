@@ -9,6 +9,7 @@ import com.luckeiros.ticketandroid.base.BaseFragment
 import com.luckeiros.ticketandroid.common.extension.observe
 import com.luckeiros.ticketandroid.common.view.viewBinding
 import com.luckeiros.ticketandroid.databinding.FragmentEventBinding
+import com.luckeiros.ticketandroid.feature.event.domain.Event
 import com.luckeiros.ticketandroid.feature.event.presentation.state.EventState
 import com.luckeiros.ticketandroid.feature.event.presentation.viewmodel.EventViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -21,7 +22,7 @@ class EventFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.loadEvent("manchester")
+        viewModel.loadEvents("manchester")
         observeStates()
     }
 
@@ -46,11 +47,11 @@ class EventFragment : BaseFragment() {
         }
     }
 
-    private fun setUpEventList(events: List<EventItem>) {
+    private fun setUpEventList(events: List<Event>) {
         binding.rvEvent.adapter = EventAdapter(events)
     }
 
-    private fun showEventList(events: List<EventItem>) {
+    private fun showEventList(events: List<Event>) {
         setUpEventList(events)
     }
 }

@@ -81,6 +81,10 @@ dependencies {
     implementation(libs.glide)
     implementation(libs.glide.compiler)
 
+    /* Room */
+    implementation(libs.room)
+    kapt(libs.room.compiler)
+
     /* Testing */
     implementation(libs.junit)
     implementation(libs.androidx.junit)
