@@ -4,7 +4,7 @@ import android.content.Context
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.luckeiros.ticketandroid.R
-import com.luckeiros.ticketandroid.common.view.TopRoundedCornersTransformation
+import com.luckeiros.ticketandroid.common.view.image.TopRoundedCornersTransformation
 
 fun ImageView.loadImage(context: Context, url: String) {
     Glide.with(context)

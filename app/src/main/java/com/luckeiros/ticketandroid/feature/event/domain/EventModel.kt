@@ -1,5 +1,10 @@
 package com.luckeiros.ticketandroid.feature.event.domain
 
+data class Events(
+    val events: List<Event>,
+    val page: Page
+)
+
 data class Event(
     val name: String,
     val date: String?,
@@ -17,6 +22,7 @@ data class EventImage(
 
 data class Page(
     val size: Int,
+    val totalElements: Int,
     val totalPages: Int,
     val number: Int
 )

@@ -4,7 +4,9 @@ import com.google.gson.annotations.SerializedName
 
 data class EventResponseDTO(
     @SerializedName("_embedded")
-    val embedded: EmbeddedEventsDTO?
+    val embedded: EmbeddedEventsDTO?,
+    @SerializedName("page")
+    val page: PageDTO
 )
 
 data class EmbeddedEventsDTO(

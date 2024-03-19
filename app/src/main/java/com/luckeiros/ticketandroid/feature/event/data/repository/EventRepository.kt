@@ -1,7 +1,7 @@
 package com.luckeiros.ticketandroid.feature.event.data.repository
 
-import com.luckeiros.ticketandroid.feature.event.domain.Event
+import com.luckeiros.ticketandroid.feature.event.domain.Events
 
-internal interface EventRepository {
-    suspend fun getEvent(city: String): List<Event>
+interface EventRepository {
+    suspend fun getEvents(city: String, page: Int): Events
 }

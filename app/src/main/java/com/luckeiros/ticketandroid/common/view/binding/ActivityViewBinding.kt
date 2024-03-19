@@ -1,4 +1,4 @@
-package com.luckeiros.ticketandroid.common.view
+package com.luckeiros.ticketandroid.common.view.binding
 
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity

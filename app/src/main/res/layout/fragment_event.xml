@@ -10,9 +10,9 @@
         android:id="@+id/ivLogo"
         android:layout_width="@dimen/logo_width"
         android:layout_height="@dimen/logo_height"
+        android:layout_marginStart="@dimen/medium_grid"
         android:layout_marginTop="@dimen/large_grid"
         android:contentDescription="@string/content_description_logo"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/tm_logo" />
@@ -30,49 +30,63 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/etEvent"
+        android:layout_width="@dimen/zero_grid"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/medium_grid"
         android:layout_marginTop="@dimen/small_grid"
-        android:layout_marginEnd="@dimen/medium_grid"
-        app:boxBackgroundColor="@color/light_blue"
-        app:boxCornerRadiusBottomEnd="@dimen/medium_grid"
-        app:boxCornerRadiusBottomStart="@dimen/medium_grid"
-        app:boxCornerRadiusTopEnd="@dimen/medium_grid"
-        app:boxCornerRadiusTopStart="@dimen/medium_grid"
-        app:boxStrokeWidth="@dimen/zero_grid"
-        app:endIconTintMode="src_over"
-        app:hintEnabled="false"
+        android:layout_marginEnd="@dimen/small_grid"
+        android:autofillHints="no"
+        android:background="@drawable/bg_edit_text"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="@dimen/small_grid"
+        android:ellipsize="end"
+        android:hint="@string/search_hint"
+        android:inputType="text"
+        android:padding="@dimen/medium_grid"
+        android:textColorHint="@color/gray"
+        app:layout_constraintEnd_toStartOf="@+id/btSearch"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvSearchEvents"
-        app:startIconDrawable="@drawable/ic_search"
-        app:startIconTint="@color/gray">
+        app:layout_constraintTop_toBottomOf="@+id/tvSearchEvents" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etCity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/inter_tight_regular"
-            android:hint="@string/search_hint"
-            android:inputType="text"
-            android:textColor="@color/gray"
-            android:textColorHint="@color/gray" />
+    <Button
+        android:id="@+id/btSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/medium_grid"
+        android:backgroundTint="@color/blue"
+        android:paddingVertical="@dimen/medium_grid"
+        android:text="@string/search_button_text"
+        app:layout_constraintBottom_toBottomOf="@+id/etEvent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/etEvent" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+    <ProgressBar
+        android:id="@+id/pbPaginationLoader"
+        android:layout_width="@dimen/large_grid"
+        android:layout_height="@dimen/large_grid"
+        android:layout_marginBottom="@dimen/large_grid"
+        android:elevation="@dimen/smallest_grid"
+        android:indeterminateTint="@color/blue"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvEvent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/medium_grid"
+        android:layout_height="@dimen/zero_grid"
+        android:layout_marginTop="@dimen/small_grid"
+        android:layout_marginBottom="@dimen/zero_grid"
         android:orientation="vertical"
-        tools:listitem="@layout/item_event"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/etEvent"
+        tools:listitem="@layout/item_event" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

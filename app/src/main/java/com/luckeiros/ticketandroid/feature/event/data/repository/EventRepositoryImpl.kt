@@ -1,17 +1,15 @@
 package com.luckeiros.ticketandroid.feature.event.data.repository
 
-import com.luckeiros.ticketandroid.feature.event.domain.mapper.toEventList
-import com.luckeiros.ticketandroid.feature.event.data.service.EventService
-import com.luckeiros.ticketandroid.feature.event.domain.Event
+import com.luckeiros.ticketandroid.feature.event.data.api.EventApi
+import com.luckeiros.ticketandroid.feature.event.data.remote.mapper.toModel
+import com.luckeiros.ticketandroid.feature.event.domain.Events
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import retrofit2.Retrofit
 
-internal class EventRepositoryImpl(private val retrofit: Retrofit) : EventRepository {
+internal class EventRepositoryImpl(private val api: EventApi) : EventRepository {
 
-    override suspend fun getEvent(city: String): List<Event> =
+    override suspend fun getEvents(city: String, page: Int): Events =
         withContext(Dispatchers.IO) {
-            val service = retrofit.create(EventService::class.java)
-            service.getEvent(city).toEventList()
+            api.getEvents(city, page).toModel()
         }
 }

@@ -5,27 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="318ba9e7-a35e-4ac9-b325-ffa0b2b4dfb3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/local/dao/EventDao.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/local/db/EventDataBase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/local/entity/EventEntities.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/local/mapper/EventLocalMapper.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/local/related/EventWithImages.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/local/remotemediator/EventRemoteMediator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/core/TicketApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/core/application/TicketApplication.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/common/view/PaginationScrollListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/bookmarks/presentation/view/EventBookmarksFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/bookmarks/presentation/viewmodel/EventBookmarksViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/bg_edit_text.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_bookmarks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_filled_bookmark.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_unfilled_bookmark.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_event_bookmarks.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/api/EventApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/api/EventApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/local/dao/EventDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/local/dao/EventDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/local/db/EventDataBase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/local/db/EventDataBase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/local/entity/EventEntities.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/local/entity/EventEntities.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/local/mapper/EventLocalMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/local/mapper/EventLocalMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/local/related/EventWithImages.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/local/related/EventWithImages.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/remote/mapper/EventMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/remote/mapper/EventMapper.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/repository/EventRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/repository/EventRepository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/repository/EventRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/repository/EventRepositoryImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/service/EventService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/api/EventApi.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/di/EventModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/di/EventModule.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/domain/EventModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/domain/EventModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/domain/mapper/EventMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/data/remote/mapper/EventMapper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/presentation/state/EventViewState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/presentation/state/EventViewState.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/presentation/view/EventAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/presentation/view/EventAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/presentation/view/EventFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/presentation/view/EventFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/presentation/view/EventItem.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/presentation/viewmodel/EventViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luckeiros/ticketandroid/feature/event/presentation/viewmodel/EventViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/ic_search.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_search.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/tm_logo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/tm_logo.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_event.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_event.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/item_event.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/item_event.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +48,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "android.gradle.sync.needed": "true",

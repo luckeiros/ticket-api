@@ -5,10 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
-import android.view.ViewGroup
-import android.widget.ImageView
-import androidx.annotation.LayoutRes
-import com.bumptech.glide.Glide
+import android.view.inputmethod.InputMethodManager
 
 fun View.visible() {
     this.visibility = VISIBLE
@@ -20,3 +17,8 @@ fun View.gone() {
 
 inline val View.layoutInflater: LayoutInflater
     get() = LayoutInflater.from(this.context)
+
+fun View.hideKeyboard() {
+    val inputMethodManager = context.getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
+    inputMethodManager?.hideSoftInputFromWindow(windowToken, 0)
+}

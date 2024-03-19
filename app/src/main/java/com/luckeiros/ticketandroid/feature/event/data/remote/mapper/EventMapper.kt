@@ -6,10 +6,10 @@ import com.luckeiros.ticketandroid.feature.event.data.remote.response.EventRespo
 import com.luckeiros.ticketandroid.feature.event.data.remote.response.PageDTO
 import com.luckeiros.ticketandroid.feature.event.domain.Event
 import com.luckeiros.ticketandroid.feature.event.domain.EventImage
+import com.luckeiros.ticketandroid.feature.event.domain.Events
 import com.luckeiros.ticketandroid.feature.event.domain.Page
 
-
-fun EventResponseDTO.toModel(): List<Event> =
+fun EventResponseDTO.toModel(): Events = Events(
     embedded?.events?.map { eventDTO ->
         val name = eventDTO.name
         val date = eventDTO.dates?.start?.localDate
@@ -27,8 +27,9 @@ fun EventResponseDTO.toModel(): List<Event> =
             location = location.orEmpty(),
             images = images ?: emptyList()
         )
-    } ?: emptyList()
-
+    } ?: emptyList(),
+    page = page.toModel()
+)
 
 private fun EventImageDTO.toModel() = EventImage(
     url = url.orEmpty(),
@@ -39,6 +40,7 @@ private fun EventImageDTO.toModel() = EventImage(
 
 private fun PageDTO.toModel() = Page(
     size = size.orZero(),
+    totalElements = totalElements.orZero(),
     totalPages = totalPages.orZero(),
     number = number.orZero()
 )

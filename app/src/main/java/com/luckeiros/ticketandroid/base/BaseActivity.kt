@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.luckeiros.ticketandroid.R
 import com.luckeiros.ticketandroid.common.extension.gone
-import com.luckeiros.ticketandroid.common.view.viewBinding
+import com.luckeiros.ticketandroid.common.view.binding.viewBinding
 import com.luckeiros.ticketandroid.common.extension.visible
 import com.luckeiros.ticketandroid.databinding.ActivityBaseBinding
 

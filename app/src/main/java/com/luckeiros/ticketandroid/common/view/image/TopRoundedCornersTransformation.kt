@@ -1,4 +1,4 @@
-package com.luckeiros.ticketandroid.common.view
+package com.luckeiros.ticketandroid.common.view.image
 
 import android.graphics.Bitmap
 import android.graphics.BitmapShader

@@ -7,14 +7,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.luckeiros.ticketandroid.common.extension.formatDate
 import com.luckeiros.ticketandroid.common.extension.layoutInflater
 import com.luckeiros.ticketandroid.common.extension.loadImage
-import com.luckeiros.ticketandroid.common.view.ImageType
+import com.luckeiros.ticketandroid.common.view.image.ImageType
 import com.luckeiros.ticketandroid.databinding.ItemEventBinding
 import com.luckeiros.ticketandroid.feature.event.domain.Event
 import com.luckeiros.ticketandroid.feature.event.domain.EventImage
 
-internal class EventAdapter(
-    private val events: List<Event>
-) : RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
+internal class EventAdapter : RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
+
+    private var events: MutableList<Event> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
         val binding = ItemEventBinding.inflate(parent.layoutInflater, parent, false)
@@ -25,6 +25,18 @@ internal class EventAdapter(
 
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
         holder.bind(events[position])
+    }
+
+    fun submitList(newEvents: List<Event>) {
+        events.clear()
+        events.addAll(newEvents)
+        notifyDataSetChanged()
+    }
+
+    fun addEvents(newEvents: List<Event>) {
+        val startInsertIndex = events.size
+        events.addAll(newEvents)
+        notifyItemRangeInserted(startInsertIndex, newEvents.size)
     }
 
     inner class EventViewHolder(
