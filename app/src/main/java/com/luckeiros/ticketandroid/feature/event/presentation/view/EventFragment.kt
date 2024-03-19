@@ -66,7 +66,12 @@ internal class EventFragment : BaseFragment() {
     private fun onSuccess(state: EventState.Success) {
         hideLoader()
         showRecyclerView()
-        if (state.firstLoad) setUpEventList(state.events) else addEventsToList(state.events)
+        if (state.firstLoad) {
+            setUpEventList(state.events)
+        } else {
+            addEventsToList(state.events)
+            hidePaginationLoader()
+        }
     }
 
     private fun showRecyclerView() {
@@ -75,6 +80,14 @@ internal class EventFragment : BaseFragment() {
 
     private fun hideRecyclerView() {
         binding.rvEvent.gone()
+    }
+
+    private fun showPaginationLoader() {
+        binding.pbPaginationLoader.visible()
+    }
+
+    private fun hidePaginationLoader() {
+        binding.pbPaginationLoader.gone()
     }
 
     private fun initRecyclerView() {
@@ -88,7 +101,10 @@ internal class EventFragment : BaseFragment() {
     private fun createPaginationListener(layoutManager: LinearLayoutManager) =
         object : PaginationListener(layoutManager) {
             override fun isLoading(): Boolean = viewModel.paginationLoading.value ?: false
-            override fun loadMoreItems() = viewModel.getMoreEvents(binding.etEvent.text.toString())
+            override fun loadMoreItems() {
+                viewModel.getMoreEvents(binding.etEvent.text.toString())
+                showPaginationLoader()
+            }
         }
 
     private fun setUpEventList(events: List<Event>) {
