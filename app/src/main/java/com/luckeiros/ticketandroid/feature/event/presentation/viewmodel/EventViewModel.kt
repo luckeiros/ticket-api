@@ -25,18 +25,18 @@ internal class EventViewModel(
     private val isNotLoadingPagination: Boolean
         get() = _paginationLoading.value != true
 
-    fun getEvents(city: String) {
+    fun getEvents(city: String? = null) {
         loadData(city, isFirstLoad = true)
     }
 
-    fun getMoreEvents(city: String) {
+    fun getMoreEvents(city: String? = null) {
         if (!shouldLoadMore()) return
         loadData(city, isFirstLoad = false)
     }
 
     private fun shouldLoadMore() = !pagination.isLastPage && isNotLoadingPagination
 
-    private fun loadData(city: String, isFirstLoad: Boolean) = safeLaunch(::handleError) {
+    private fun loadData(city: String?, isFirstLoad: Boolean) = safeLaunch(::handleError) {
         emitLoadingState(isFirstLoad)
         emitPaginationLoadingState(isFirstLoad)
 

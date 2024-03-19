@@ -27,9 +27,9 @@ internal class EventAdapter : RecyclerView.Adapter<EventAdapter.EventViewHolder>
         holder.bind(events[position])
     }
 
-    fun submitList(newEvents: List<Event>) {
+    fun submitList(eventsList: List<Event>) {
         events.clear()
-        events.addAll(newEvents)
+        events.addAll(eventsList)
         notifyDataSetChanged()
     }
 

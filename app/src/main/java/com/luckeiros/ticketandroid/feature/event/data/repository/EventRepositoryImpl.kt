@@ -8,7 +8,7 @@ import kotlinx.coroutines.withContext
 
 internal class EventRepositoryImpl(private val api: EventApi) : EventRepository {
 
-    override suspend fun getEvents(city: String, page: Int): Events =
+    override suspend fun getEvents(city: String?, page: Int): Events =
         withContext(Dispatchers.IO) {
             api.getEvents(city, page).toModel()
         }

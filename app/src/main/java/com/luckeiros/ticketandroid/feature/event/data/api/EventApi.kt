@@ -6,7 +6,7 @@ import retrofit2.http.Query
 
 interface EventApi {
     @GET(EVENTS_PATH)
-    suspend fun getEvents(@Query("city") city: String, @Query("page") page: Int): EventResponseDTO
+    suspend fun getEvents(@Query("city") city: String?, @Query("page") page: Int): EventResponseDTO
 
     private companion object {
         const val EVENTS_PATH = "events.json"

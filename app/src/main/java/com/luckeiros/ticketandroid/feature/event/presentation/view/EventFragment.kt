@@ -34,6 +34,7 @@ internal class EventFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupView()
+        showDefaultEventList()
     }
 
     private fun setupView() {
@@ -41,6 +42,8 @@ internal class EventFragment : BaseFragment() {
         observeStates()
         setupSearchClick()
     }
+
+    private fun showDefaultEventList() = viewModel.getEvents()
 
     private fun observeStates() {
         viewModel.state.observe(viewLifecycleOwner) { state ->
@@ -74,21 +77,13 @@ internal class EventFragment : BaseFragment() {
         }
     }
 
-    private fun showRecyclerView() {
-        binding.rvEvent.visible()
-    }
+    private fun showRecyclerView() = binding.rvEvent.visible()
 
-    private fun hideRecyclerView() {
-        binding.rvEvent.gone()
-    }
+    private fun hideRecyclerView() = binding.rvEvent.gone()
 
-    private fun showPaginationLoader() {
-        binding.pbPaginationLoader.visible()
-    }
+    private fun showPaginationLoader() = binding.pbPaginationLoader.visible()
 
-    private fun hidePaginationLoader() {
-        binding.pbPaginationLoader.gone()
-    }
+    private fun hidePaginationLoader() = binding.pbPaginationLoader.gone()
 
     private fun initRecyclerView() {
         binding.rvEvent.apply {
@@ -107,13 +102,9 @@ internal class EventFragment : BaseFragment() {
             }
         }
 
-    private fun setUpEventList(events: List<Event>) {
-        adapter.submitList(events)
-    }
+    private fun setUpEventList(events: List<Event>) = adapter.submitList(events)
 
-    private fun addEventsToList(events: List<Event>) {
-        adapter.addEvents(events)
-    }
+    private fun addEventsToList(events: List<Event>) = adapter.addEvents(events)
 
     private fun setupSearchClick() {
         binding.btSearch.setOnClickListener {
