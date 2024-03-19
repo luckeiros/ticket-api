@@ -34,7 +34,7 @@ internal class EventViewModel(
         loadData(city, isFirstLoad = false)
     }
 
-    private fun shouldLoadMore() = !pagination.isLastPage && !isNotLoadingPagination
+    private fun shouldLoadMore() = !pagination.isLastPage && isNotLoadingPagination
 
     private fun loadData(city: String, isFirstLoad: Boolean) = safeLaunch(::handleError) {
         emitLoadingState(isFirstLoad)
