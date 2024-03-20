@@ -70,7 +70,6 @@ glide-compiler = { module = "com.github.bumptech.glide:ksp", version.ref = "glid
 # Room
 room = { module = "androidx.room:room-ktx", version.ref = "room"}
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room"}
-room-paging = { module = "androidx.room:room-paging", version.ref = "room"}
 
 # Testing
 junit = { module = "junit:junit", version.ref = "junit" }

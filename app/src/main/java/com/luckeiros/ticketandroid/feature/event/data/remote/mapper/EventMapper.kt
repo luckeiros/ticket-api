@@ -17,14 +17,14 @@ fun EventResponseDTO.toModel(): Events = Events(
         val venue = venues?.firstOrNull()?.name
         val city = venues?.firstOrNull()?.city?.name
         val stateCode = venues?.firstOrNull()?.state?.stateCode
-        val location = if (stateCode?.isNotEmpty() == true) "$city, $stateCode" else city
         val images = eventDTO.images?.map { it.toModel() }
 
         Event(
             name = name.orEmpty(),
             date = date.orEmpty(),
             venue = venue.orEmpty(),
-            location = location.orEmpty(),
+            city = city.orEmpty(),
+            stateCode = stateCode.orEmpty(),
             images = images ?: emptyList()
         )
     } ?: emptyList(),

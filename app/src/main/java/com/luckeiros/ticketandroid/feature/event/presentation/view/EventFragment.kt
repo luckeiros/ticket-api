@@ -1,16 +1,17 @@
 package com.luckeiros.ticketandroid.feature.event.presentation.view
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import com.luckeiros.ticketandroid.R
 import com.luckeiros.ticketandroid.base.BaseFragment
 import com.luckeiros.ticketandroid.common.extension.gone
 import com.luckeiros.ticketandroid.common.extension.hideKeyboard
 import com.luckeiros.ticketandroid.common.extension.visible
+import com.luckeiros.ticketandroid.common.feedback.Feedback
 import com.luckeiros.ticketandroid.common.view.binding.viewBinding
 import com.luckeiros.ticketandroid.common.view.pagination.PaginationListener
 import com.luckeiros.ticketandroid.databinding.FragmentEventBinding
@@ -49,7 +50,7 @@ internal class EventFragment : BaseFragment() {
         viewModel.state.observe(viewLifecycleOwner) { state ->
             when (state) {
                 is EventState.Loading -> onLoading()
-                is EventState.Error -> onError()
+                is EventState.Error -> onError(state.feedback)
                 is EventState.Success -> onSuccess(state)
             }
         }
@@ -61,14 +62,15 @@ internal class EventFragment : BaseFragment() {
         binding.rvEvent.gone()
     }
 
-    private fun onError() {
+    private fun onError(feedback: Feedback) {
         hideLoader()
-        Log.e("TAG", "error")
+        Snackbar.make(binding.root, feedback.message, Snackbar.LENGTH_LONG).show()
     }
 
     private fun onSuccess(state: EventState.Success) {
         hideLoader()
         showRecyclerView()
+
         if (state.firstLoad) {
             setUpEventList(state.events)
         } else {
@@ -76,6 +78,8 @@ internal class EventFragment : BaseFragment() {
             hidePaginationLoader()
         }
     }
+
+    private fun getTextTyped() = binding.etEvent.text.toString()
 
     private fun showRecyclerView() = binding.rvEvent.visible()
 
@@ -97,7 +101,7 @@ internal class EventFragment : BaseFragment() {
         object : PaginationListener(layoutManager) {
             override fun isLoading(): Boolean = viewModel.paginationLoading.value ?: false
             override fun loadMoreItems() {
-                viewModel.getMoreEvents(binding.etEvent.text.toString())
+                viewModel.getMoreEvents(getTextTyped())
                 showPaginationLoader()
             }
         }
@@ -109,7 +113,7 @@ internal class EventFragment : BaseFragment() {
     private fun setupSearchClick() {
         binding.btSearch.setOnClickListener {
             it.hideKeyboard()
-            viewModel.getEvents(binding.etEvent.text.toString())
+            viewModel.getEvents(getTextTyped())
         }
     }
 }

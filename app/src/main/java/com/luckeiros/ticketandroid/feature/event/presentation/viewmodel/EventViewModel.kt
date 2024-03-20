@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.luckeiros.ticketandroid.common.extension.emit
 import com.luckeiros.ticketandroid.common.extension.safeLaunch
+import com.luckeiros.ticketandroid.common.feedback.FeedbackFactory
 import com.luckeiros.ticketandroid.common.view.pagination.PaginationHandler
 import com.luckeiros.ticketandroid.feature.event.data.repository.EventRepository
 import com.luckeiros.ticketandroid.feature.event.domain.Events
@@ -62,7 +63,9 @@ internal class EventViewModel(
     }
 
     private fun handleError(e: Exception) {
-        _state.emit(EventState.Error)
+        val feedback = FeedbackFactory.create(e)
+
+        _state.emit(EventState.Error(feedback))
         _paginationLoading.emit(false)
     }
 

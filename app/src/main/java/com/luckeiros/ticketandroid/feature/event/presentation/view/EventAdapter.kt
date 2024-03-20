@@ -49,7 +49,13 @@ internal class EventAdapter : RecyclerView.Adapter<EventAdapter.EventViewHolder>
                 tvName.text = name
                 tvDate.text = date?.formatDate()
                 tvVenue.text = venue
-                tvLocation.text = location
+                tvLocation.text = stateCode?.let {
+                    if (it.isNotEmpty()) {
+                        "$city, $stateCode"
+                    } else {
+                        city
+                    }
+                }
 
                 images?.let {
                     val matchedImageUrl = findBestMatchedImageUrl(it, ivEvent.context)

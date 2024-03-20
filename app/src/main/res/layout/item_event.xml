@@ -12,7 +12,7 @@
         android:layout_marginStart="@dimen/large_grid"
         android:layout_marginTop="@dimen/small_grid"
         android:layout_marginEnd="@dimen/large_grid"
-        android:layout_marginBottom="@dimen/large_grid"
+        android:layout_marginBottom="@dimen/medium_grid"
         android:background="@drawable/bg_event_item"
         android:elevation="@dimen/smallest_grid"
         app:layout_constraintBottom_toBottomOf="parent"

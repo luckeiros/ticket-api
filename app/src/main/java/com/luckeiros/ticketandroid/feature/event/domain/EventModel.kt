@@ -9,7 +9,8 @@ data class Event(
     val name: String,
     val date: String?,
     val venue: String?,
-    val location: String?,
+    val city: String?,
+    val stateCode: String?,
     val images: List<EventImage>?
 )
 
