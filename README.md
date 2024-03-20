@@ -171,6 +171,14 @@ It uses LiveData and MutableLiveData to emit those states, allowing the Fragment
 
 `EventFragment` extends from `BaseFragment`. It observe the states emitted from `EventViewModel` and update the view accordingly. It also has a Pagination RecyclerView Listener.
 
+### Image Treatment
+
+`ImageType` is an enum class which finds the best "match" between the images provided by the API and the device size. It compares each size and choose the best option to put into the image space. It's used in the Adapter during the ViewHolder bind.
+
+### ViewBinding
+
+`ActivityViewBinding` and `FragmentViewBinding` has delegates that simplifies the way to instantiate ViewBinding and also has a delegate in charge of removing the instance of the binding when onDestroy() is called, avoiding memory leaks.
+
 ### Unit Test
 
 `EventViewModelTest` tests the different scenarios/states of the ViewModel. It uses Coroutines to run tests on its blocks and also the MockK library to mock the necessary.
