@@ -78,8 +78,8 @@ This layer has the app general 'commons'. It contains useful resources to be use
 #### `core/`
 
 This layer centralizes literally the application core.
-- `application`: The application base configuration.
-- `network`: The application base network configuration.
+- `application`: Application's base configuration.
+- `network`: Application's base network configuration.
   - `connectivity`: An approach to manage the device's connection state.
   - `interceptor`: Centralizes the entire application interceptors.
 
@@ -89,35 +89,35 @@ This layer centralizes literally the application core.
 
 `EventApi` is an interface which provides a simple way to access data from the remote source.  
 It uses Retrofit, which makes network requests much easier.  
-The GET annotation is receiving only the endpoint/path because the ApiInterceptor already passes the Base URL.  
-The getEvents() query receives a String city, which is the city searched by the user, and an Int page, which is used to get the nextPage from the API under the pagination concept. It returns an EventResponseDTO containing all the data that will be used in the app.  
-This function is a `suspend` one because it runs in a Coroutines Dispatcher. It's better explained on the next topic.
+The GET annotation is receiving only the endpoint/path because the `ApiInterceptor` already passes the Base URL.  
+The getEvents() query receives a String city, which is the city searched by the user, and an Int page, which is used to get the next page from the API under the pagination concept. It returns an EventResponseDTO containing all the data that will be used in the app.  
+This function is a `suspend` one because it runs in a Coroutines context. It's better explained on the next topic.
 
 ### Repository
 
 `EventRepository` is essentially the Repository Pattern. This helps to separate the data access logic from the rest of the application, making it easier to maintain and change data sources in the future.  
 The implementation receives an API interface which is injected into its constructor. This API interface is previously created by Retrofit in the feature DI module.
-The repository's getEvents function uses `withContext` from Kotlin Coroutines to run the API interface getEvents function into a IO Dispatcher context, which is optimized for I/O operations. This ensures that the function won't block the UI thread.
+The repository's getEvents function uses `withContext` from Kotlin Coroutines to run the getEvents() function from API interface into an IO Coroutines Dispatcher context, which is optimized for I/O operations. This ensures that the function won't block the UI thread.
 
 ### Dependency Injection
 
 `NetworkModule` is a crucial part of the app's architecture. It's responsible for managing the main app dependencies, such as Retrofit and OkHttpClient.  
 This Retrofit instance can be used in the entire app runtime, to make network requests in any feature.  
-The OkHttpClient instance is important to set up the interceptors, such as ApiInterceptor, which puts the API Key into the endpoint before making the request, and the Error/Connectivity Interceptor to manage error treatment. Also, it configures the timeout for network requests.
+The OkHttpClient instance is important to set up the interceptors, such as `ApiInterceptor`, which puts the API Key into the endpoint before making the request, and the Error/Connectivity Interceptor to manage error treatment. Also, it configures the timeout for network requests.
 
-`EventModule` centralizes the feature dependencies, such as API (created with Retrofit), Repository, PaginationHandler and ViewModel. All these dependencies are instantiated and in this module and can be injected for the classes that will need.
+`EventModule` centralizes the feature dependencies, such as API (created with Retrofit), Repository, `PaginationHandler` and ViewModel. All these dependencies are instantiated in this module and can be injected where needed.
 
 ### Model
 
-`EventModel` centralizes the models that were converted from DTO to domain models. Those are simplified data classes to be easily used in the presentation layer.
+`EventModel` centralizes the models that were converted from DTO to domain models. Those are simplified data classes to be easily used and manipulated in the presentation layer.
 
 ### Mapper
 
-`EventMapper` is responsible for convert DTO to domain models. It makes it in a very easy way by using extension functions.
+`EventMapper` is responsible for convert DTO to domain models in a very easy way, by using extension functions.
 
 ### Connectivity Manager
 
-`ConnectivityManager` is a wrapper that gets the current connection state from the device and, based on that, notifies the `ConnectivityInterceptor`, which can throw a NoConnectionException or not.
+`ConnectivityManager` is a wrapper that gets the current connection state from the device and, based on that, notifies the `ConnectivityInterceptor`, which can throw a `NoConnectionException` or not.
 
 ### Interceptor
 
@@ -129,7 +129,7 @@ The OkHttpClient instance is important to set up the interceptors, such as ApiIn
 
 ### Extensions
 
-`CoroutinesScopeExt` is used as a helper for launching coroutines within a viewModel plus handle exceptions.
+`CoroutinesScopeExt` is used as a helper for launching Coroutines within a ViewModel plus handle exceptions.
 
 `ImageExt` is used as a helper for loading images using Glide library.
 
@@ -139,7 +139,7 @@ The OkHttpClient instance is important to set up the interceptors, such as ApiIn
 
 `StringExt` has a function to format date to a specific format.
 
-`ViewExt`is used as a helper for view common treatments.
+`ViewExt` is used as a helper for view common treatments.
 
 ### Feedback
 
@@ -159,7 +159,7 @@ The OkHttpClient instance is important to set up the interceptors, such as ApiIn
 ### ViewModel
 
 `EventViewModel` is responsible for managing the data, doing business logic, sending data and emitting `EventState` to the UI (Fragment).  
-It uses LiveData and MutableLiveData to emit those states, allowing the Fragment to observe the changes when a new state is emitted and update the UI accordingly. It also use the `PaginationHandler`, which was explained at Pagination Handler section.
+It uses LiveData and MutableLiveData to emit those states, allowing the Fragment to observe the changes when a new state is emitted and update the UI accordingly. It also uses the `PaginationHandler`, which was explained at Pagination Handler section.
 
 ### Presentation
 
@@ -177,7 +177,7 @@ It uses LiveData and MutableLiveData to emit those states, allowing the Fragment
 
 ### ViewBinding
 
-`ActivityViewBinding` and `FragmentViewBinding` has delegates that simplifies the way to instantiate ViewBinding and also has a delegate in charge of removing the instance of the binding when onDestroy() is called, avoiding memory leaks.
+`ActivityViewBinding` and `FragmentViewBinding` has an inline function that simplifies the way to instantiate ViewBinding in Fragments and Activities and also has a delegate in charge of removing the instance of the binding when onDestroy() is called, avoiding us to treat it in every Activity or Fragment and also preventing memory leaks.
 
 ### Unit Test
 
@@ -186,8 +186,7 @@ It uses LiveData and MutableLiveData to emit those states, allowing the Fragment
 ## Final Considerations
 
 One of the requirements for this test was to create any type of storage, but I couldn't make because of the limited time I had to make this test, not because of the deadline, but because I'm very overwhelmed in my current job and I almost had no time to do everything I wanted to do in this test.  
-I had some ideas: using Room Database to cache the events the user already saw for at least 1 hour, avoiding unnecessary network requests for the same result. Also, if I had more time, I would apply Paging 3 from Jetpack to have a more concise and recommended pagination logic, but due to the lack of time, I had to make it the old way.
+I had some ideas: using Room Database to cache the events already seen for at least 1 hour, avoiding unnecessary network requests for the same result. Also, if I had more time, I would apply Paging 3 from Jetpack to have a more concise and recommended pagination logic, but due to the lack of time, I had to make it the old way.
 Well, despite everything mentioned, I put my heart in this test, working a few days along the dawn, but that's it. 
-Thank you.
 
 Lucas
