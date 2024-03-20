@@ -59,7 +59,12 @@ internal class EventViewModel(
 
     private fun handleResponse(response: Events, isFirstLoad: Boolean) {
         pagination.updatePaginationInfo(response.page)
-        _state.emit(EventState.Success(response.events, isFirstLoad))
+
+        if (response.events.isEmpty()) {
+            _state.emit(EventState.NoEventsFound)
+        } else {
+            _state.emit(EventState.Success(response.events, isFirstLoad))
+        }
     }
 
     private fun handleError(e: Exception) {

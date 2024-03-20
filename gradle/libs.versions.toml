@@ -79,6 +79,7 @@ androidx-arch-core-testing = { module = "androidx.arch.core:core-testing", versi
 mockk-android = { module = "io.mockk:mockk-android", version.ref = "mockk" }
 mockk-core = { module = "io.mockk:mockk", version.ref = "mockk" }
 koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin" }
+coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "android-gradle-plugin" }

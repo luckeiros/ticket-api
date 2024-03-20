@@ -4,6 +4,7 @@
     <string name="search_title">Search events by city</string>
     <string name="search_hint">Type a city</string>
     <string name="search_button_text">Search</string>
+    <string name="no_events_found_text">No events found</string>
     <string name="content_description_logo">Ticketmaster logo</string>
     <string name="content_description_event_image">Event image</string>
 </resources>

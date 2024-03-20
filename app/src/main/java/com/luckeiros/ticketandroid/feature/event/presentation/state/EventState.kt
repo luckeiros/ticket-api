@@ -7,4 +7,5 @@ sealed class EventState {
     data object Loading : EventState()
     data class Error(val feedback: Feedback) : EventState()
     data class Success(val events: List<Event>, val firstLoad: Boolean) : EventState()
+    data object NoEventsFound : EventState()
 }

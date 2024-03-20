@@ -52,6 +52,7 @@ internal class EventFragment : BaseFragment() {
                 is EventState.Loading -> onLoading()
                 is EventState.Error -> onError(state.feedback)
                 is EventState.Success -> onSuccess(state)
+                is EventState.NoEventsFound -> onNoEventsFound()
             }
         }
     }
@@ -59,16 +60,19 @@ internal class EventFragment : BaseFragment() {
     private fun onLoading() {
         showLoader()
         hideRecyclerView()
-        binding.rvEvent.gone()
+        hideNoEventsMessage()
     }
 
     private fun onError(feedback: Feedback) {
         hideLoader()
+        hideNoEventsMessage()
+
         Snackbar.make(binding.root, feedback.message, Snackbar.LENGTH_LONG).show()
     }
 
     private fun onSuccess(state: EventState.Success) {
         hideLoader()
+        hideNoEventsMessage()
         showRecyclerView()
 
         if (state.firstLoad) {
@@ -77,6 +81,12 @@ internal class EventFragment : BaseFragment() {
             addEventsToList(state.events)
             hidePaginationLoader()
         }
+    }
+
+    private fun onNoEventsFound() {
+        showNoEventsMessage()
+        hideLoader()
+        hideRecyclerView()
     }
 
     private fun getTextTyped() = binding.etEvent.text.toString()
@@ -88,6 +98,10 @@ internal class EventFragment : BaseFragment() {
     private fun showPaginationLoader() = binding.pbPaginationLoader.visible()
 
     private fun hidePaginationLoader() = binding.pbPaginationLoader.gone()
+
+    private fun showNoEventsMessage() = binding.tvNoEvents.visible()
+
+    private fun hideNoEventsMessage() = binding.tvNoEvents.gone()
 
     private fun initRecyclerView() {
         binding.rvEvent.apply {

@@ -39,8 +39,5 @@ private fun EventImageDTO.toModel() = EventImage(
 )
 
 private fun PageDTO.toModel() = Page(
-    size = size.orZero(),
-    totalElements = totalElements.orZero(),
-    totalPages = totalPages.orZero(),
-    number = number.orZero()
+    totalPages = totalPages.orZero()
 )

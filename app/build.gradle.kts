@@ -87,11 +87,12 @@ dependencies {
     kapt(libs.room.compiler)
 
     /* Testing */
-    implementation(libs.junit)
-    implementation(libs.androidx.junit)
-    implementation(libs.androidx.espresso.core)
-    implementation(libs.androidx.arch.core.testing)
-    implementation(libs.mockk.android)
-    implementation(libs.mockk.core)
-    implementation(libs.koin.test)
+    testImplementation(libs.junit)
+    testImplementation(libs.androidx.junit)
+    testImplementation(libs.androidx.espresso.core)
+    testImplementation(libs.androidx.arch.core.testing)
+    testImplementation(libs.mockk.android)
+    testImplementation(libs.mockk.core)
+    testImplementation(libs.koin.test)
+    testImplementation(libs.coroutines.test)
 }

@@ -6,6 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".feature.event.presentation.view.EventFragment">
 
+    <TextView
+        android:id="@+id/tvNoEvents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/smallest_grid"
+        android:fontFamily="@font/inter_tight_semi_bold"
+        android:text="@string/no_events_found_text"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/large_text"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEvent"
+        tools:visibility="visible" />
+
     <ImageView
         android:id="@+id/ivLogo"
         android:layout_width="@dimen/logo_width"

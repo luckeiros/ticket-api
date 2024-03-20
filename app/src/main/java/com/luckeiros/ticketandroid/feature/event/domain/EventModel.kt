@@ -22,8 +22,5 @@ data class EventImage(
 )
 
 data class Page(
-    val size: Int,
-    val totalElements: Int,
-    val totalPages: Int,
-    val number: Int
+    val totalPages: Int
 )
