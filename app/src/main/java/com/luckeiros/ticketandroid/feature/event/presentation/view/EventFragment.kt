@@ -89,7 +89,7 @@ internal class EventFragment : BaseFragment() {
         hideRecyclerView()
     }
 
-    private fun getTextTyped() = binding.etEvent.text.toString()
+    private fun getTypedText() = binding.etEvent.text.toString()
 
     private fun showRecyclerView() = binding.rvEvent.visible()
 
@@ -115,7 +115,7 @@ internal class EventFragment : BaseFragment() {
         object : PaginationListener(layoutManager) {
             override fun isLoading(): Boolean = viewModel.paginationLoading.value ?: false
             override fun loadMoreItems() {
-                viewModel.getMoreEvents(getTextTyped())
+                viewModel.getMoreEvents(getTypedText())
                 showPaginationLoader()
             }
         }
@@ -127,7 +127,7 @@ internal class EventFragment : BaseFragment() {
     private fun setupSearchClick() {
         binding.btSearch.setOnClickListener {
             it.hideKeyboard()
-            viewModel.getEvents(getTextTyped())
+            viewModel.getEvents(getTypedText())
         }
     }
 }
