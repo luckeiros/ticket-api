@@ -182,11 +182,3 @@ It uses LiveData and MutableLiveData to emit those states, allowing the Fragment
 ### Unit Test
 
 `EventViewModelTest` tests the different scenarios/states of the ViewModel. It uses Coroutines to run tests on its blocks and also the MockK library to mock the necessary.
-
-## Final Considerations
-
-One of the requirements for this test was to create any type of storage, but I couldn't make because of the limited time I had to make this test, not because of the deadline, but because I'm very overwhelmed in my current job and I almost had no time to do everything I wanted to do in this test.  
-I had some ideas: using Room Database to cache the events already seen for at least 1 hour, avoiding unnecessary network requests for the same result. Also, if I had more time, I would apply Paging 3 from Jetpack to have a more concise and recommended pagination logic, but due to the lack of time, I had to make it the old way.
-Well, despite everything mentioned, I put my heart in this test, working a few days along the dawn, but that's it. 
-
-Lucas
