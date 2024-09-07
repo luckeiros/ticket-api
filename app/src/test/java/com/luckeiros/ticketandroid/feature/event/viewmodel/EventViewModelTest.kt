@@ -147,7 +147,7 @@ class EventViewModelTest {
     }
 
     @Test
-    fun `getEvents emits NoEventsFound state when no events are returned`() = runTest {
+    fun `getEvents emits NoEventsFound state when none event is returned`() = runTest {
         coEvery { mockRepository.getEvents(any(), FIRST_PAGE_INDEX) } returns emptyEvents
 
         val stateObserver = viewModel.state.testObserver()
