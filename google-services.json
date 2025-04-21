@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "734107850678",
+    "project_id": "luck-push",
+    "storage_bucket": "luck-push.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:734107850678:android:ba8ffe6770f2ac552dd317",
+        "android_client_info": {
+          "package_name": "com.luckeiros.ticketandroid"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBR7wGq6H3ONNYBBC5-YxZtmMZXlwxgYrU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

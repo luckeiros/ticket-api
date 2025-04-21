@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.google.services)
 }
 
 android {
@@ -66,7 +67,8 @@ dependencies {
     implementation(libs.kotlinx.coroutines)
 
     /* Google */
-    implementation(libs.google.material)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.messaging)
     implementation(libs.google.material)
 
     /* Retrofit */
